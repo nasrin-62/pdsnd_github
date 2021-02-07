@@ -9,6 +9,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
+    Note that only months January to June are available.
+    Note also, that 'all' can be selected for month and day.
 
     Returns:
         (str) city - name of the city to analyze
@@ -24,7 +26,7 @@ def get_filters():
             print("Your chosen city is {}!".format(city))
             break
         else:
-            print("{} is not a valid city".format(city))
+            print("{} is not a valid city. Please enter 'chicago', 'new york city' or 'washington'".format(city))
 
     # get user input for month (all, january, february, ... , june)
     months = ['all', 'january', 'february', 'march' ,'april', 'may', 'june']
@@ -204,9 +206,9 @@ def raw_data(df):
     start = 0
     while True:
         if start == 0:
-            yesno = input("Do you want to see 5 rows of raw data? Enter 'yes' or 'no': ")
+            yesno = input("Do you want to see 7 rows of raw data? Enter 'yes' or 'no': ")
         else:
-            yesno = input("Do you want to see 5 more rows of raw data? Enter 'yes' or 'no': ")
+            yesno = input("Do you want to see 7 more rows of raw data? Enter 'yes' or 'no': ")
         yesno = yesno.lower()
         if yesnos.count(yesno) >= 1:
             print("You has select value is {}!".format(yesno))
@@ -215,9 +217,9 @@ def raw_data(df):
                 break
             #if user choses to display 5 rows, do so
             else:
-                end = start + 5
+                end = start + 7
                 print(df.iloc[start:end])
-                start = start + 5
+                start = start + 7
         #error if user enters a value other than 'yes' or 'no'
         else:
             print("{} is not a valid value".format(yesno))
