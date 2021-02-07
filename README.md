@@ -5,7 +5,7 @@ February 7, 2021
 Bikeshare
 
 ### Description
-Describe what your project is about and what it does
+Report statistics on bikeshare usage
 
 ### Files used
 Include the files used
